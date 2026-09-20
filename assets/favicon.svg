@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" shape-rendering="crispEdges">
+  <defs>
+    <!-- Phosphor green glow — matches the CRT monitor effect -->
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background: near-black, no rounding = pixel aesthetic -->
+  <rect width="32" height="32" fill="#050505"/>
+
+  <!-- Subtle scanline overlay -->
+  <rect width="32" height="1" y="4"  fill="rgba(255,255,255,0.03)"/>
+  <rect width="32" height="1" y="8"  fill="rgba(255,255,255,0.03)"/>
+  <rect width="32" height="1" y="12" fill="rgba(255,255,255,0.03)"/>
+  <rect width="32" height="1" y="16" fill="rgba(255,255,255,0.03)"/>
+  <rect width="32" height="1" y="20" fill="rgba(255,255,255,0.03)"/>
+  <rect width="32" height="1" y="24" fill="rgba(255,255,255,0.03)"/>
+  <rect width="32" height="1" y="28" fill="rgba(255,255,255,0.03)"/>
+
+  <!-- Pixel art ">" chevron — 2×2 blocks, vertically centered -->
+  <g filter="url(#glow)" fill="#00ff41">
+    <rect x="3"  y="9"  width="2" height="2"/>
+    <rect x="5"  y="11" width="2" height="2"/>
+    <rect x="7"  y="13" width="2" height="2"/>
+    <rect x="9"  y="15" width="2" height="2"/>
+    <rect x="7"  y="17" width="2" height="2"/>
+    <rect x="5"  y="19" width="2" height="2"/>
+    <rect x="3"  y="21" width="2" height="2"/>
+
+    <!-- Pixel art "_" cursor underline -->
+    <rect x="13" y="21" width="16" height="2"/>
+  </g>
+</svg>
