@@ -26,17 +26,21 @@ push em `main` (e pode ser disparado manualmente em **Actions → Run workflow**
 Para o primeiro deploy é preciso habilitar o Pages uma única vez:
 **Settings → Pages → Build and deployment → Source: GitHub Actions**.
 
-A URL padrão será `https://mauriciodantas.github.io/privacy-policy/`.
+### Domínio
 
-### Domínio próprio (opcional)
+O site é servido em <https://privacy.mdantas.net/> — na raiz do domínio, sem o
+sufixo `/privacy-policy`, que só existe na URL padrão do Pages
+(`mauriciodantas.github.io/privacy-policy/`).
 
-Para servir em um subdomínio como `privacy.mdantas.net`:
+A configuração tem dois lados, e em nenhum deles entra um caminho de URL:
 
-1. crie um registro DNS `CNAME` apontando `privacy` → `mauriciodantas.github.io`;
-2. adicione um arquivo `CNAME` na raiz deste repositório contendo apenas
-   `privacy.mdantas.net`;
-3. confirme o domínio em **Settings → Pages → Custom domain** e marque
-   **Enforce HTTPS**.
+| Onde | O que é configurado | Valor |
+| --- | --- | --- |
+| DNS do domínio | registro `CNAME` de `privacy` apontando para o GitHub | `mauriciodantas.github.io` |
+| **Settings → Pages → Custom domain** | o domínio a ser servido | `privacy.mdantas.net` |
+
+O arquivo `CNAME` na raiz do repositório repete o domínio para que ele
+sobreviva a redeploys. Com o domínio validado, marque **Enforce HTTPS**.
 
 ## Atualizando o conteúdo
 
